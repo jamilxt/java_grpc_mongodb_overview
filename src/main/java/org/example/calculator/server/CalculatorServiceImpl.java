@@ -1,11 +1,10 @@
 package org.example.calculator.server;
 
-import com.proto.calculator.CalculatorServiceGrpc;
-import com.proto.calculator.SumRequest;
-import com.proto.calculator.SumResponse;
+import com.proto.calculator.*;
 import io.grpc.stub.StreamObserver;
 
 public class CalculatorServiceImpl extends CalculatorServiceGrpc.CalculatorServiceImplBase {
+
   @Override
   public void sum(SumRequest request, StreamObserver<SumResponse> responseObserver) {
 
@@ -17,4 +16,25 @@ public class CalculatorServiceImpl extends CalculatorServiceGrpc.CalculatorServi
 
     responseObserver.onCompleted();
   }
+
+  @Override
+  public void primeNumberDecomposition(PrimeNumberDecompositionRequest request, StreamObserver<PrimeNumberDecompositionResponse> responseObserver) {
+    long number = request.getNumber();
+    long divisor = 2L;
+
+    while (number > 1) {
+      if (number % divisor == 0) {
+        number = number / divisor;
+        responseObserver.onNext(PrimeNumberDecompositionResponse
+            .newBuilder()
+            .setPrimeFactor(divisor)
+            .build());
+      } else {
+        divisor = divisor + 1;
+      }
+    }
+
+    responseObserver.onCompleted();
+  }
+
 }
