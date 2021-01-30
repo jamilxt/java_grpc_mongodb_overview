@@ -76,6 +76,37 @@ public final class CalculatorServiceGrpc {
     return getPrimeNumberDecompositionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.calculator.ComputeAverageRequest,
+      com.proto.calculator.ComputeAverageResponse> getComputerAverageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ComputerAverage",
+      requestType = com.proto.calculator.ComputeAverageRequest.class,
+      responseType = com.proto.calculator.ComputeAverageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.calculator.ComputeAverageRequest,
+      com.proto.calculator.ComputeAverageResponse> getComputerAverageMethod() {
+    io.grpc.MethodDescriptor<com.proto.calculator.ComputeAverageRequest, com.proto.calculator.ComputeAverageResponse> getComputerAverageMethod;
+    if ((getComputerAverageMethod = CalculatorServiceGrpc.getComputerAverageMethod) == null) {
+      synchronized (CalculatorServiceGrpc.class) {
+        if ((getComputerAverageMethod = CalculatorServiceGrpc.getComputerAverageMethod) == null) {
+          CalculatorServiceGrpc.getComputerAverageMethod = getComputerAverageMethod =
+              io.grpc.MethodDescriptor.<com.proto.calculator.ComputeAverageRequest, com.proto.calculator.ComputeAverageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ComputerAverage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.calculator.ComputeAverageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.calculator.ComputeAverageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CalculatorServiceMethodDescriptorSupplier("ComputerAverage"))
+              .build();
+        }
+      }
+    }
+    return getComputerAverageMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,13 @@ public final class CalculatorServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPrimeNumberDecompositionMethod(), responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.proto.calculator.ComputeAverageRequest> computerAverage(
+        io.grpc.stub.StreamObserver<com.proto.calculator.ComputeAverageResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getComputerAverageMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -154,6 +192,13 @@ public final class CalculatorServiceGrpc {
                 com.proto.calculator.PrimeNumberDecompositionRequest,
                 com.proto.calculator.PrimeNumberDecompositionResponse>(
                   this, METHODID_PRIME_NUMBER_DECOMPOSITION)))
+          .addMethod(
+            getComputerAverageMethod(),
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+              new MethodHandlers<
+                com.proto.calculator.ComputeAverageRequest,
+                com.proto.calculator.ComputeAverageResponse>(
+                  this, METHODID_COMPUTER_AVERAGE)))
           .build();
     }
   }
@@ -186,6 +231,14 @@ public final class CalculatorServiceGrpc {
         io.grpc.stub.StreamObserver<com.proto.calculator.PrimeNumberDecompositionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getPrimeNumberDecompositionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.proto.calculator.ComputeAverageRequest> computerAverage(
+        io.grpc.stub.StreamObserver<com.proto.calculator.ComputeAverageResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getComputerAverageMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -244,6 +297,7 @@ public final class CalculatorServiceGrpc {
 
   private static final int METHODID_SUM = 0;
   private static final int METHODID_PRIME_NUMBER_DECOMPOSITION = 1;
+  private static final int METHODID_COMPUTER_AVERAGE = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -280,6 +334,9 @@ public final class CalculatorServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_COMPUTER_AVERAGE:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.computerAverage(
+              (io.grpc.stub.StreamObserver<com.proto.calculator.ComputeAverageResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -333,6 +390,7 @@ public final class CalculatorServiceGrpc {
               .setSchemaDescriptor(new CalculatorServiceFileDescriptorSupplier())
               .addMethod(getSumMethod())
               .addMethod(getPrimeNumberDecompositionMethod())
+              .addMethod(getComputerAverageMethod())
               .build();
         }
       }
