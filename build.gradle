@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.grpc:grpc-netty-shaded:1.35.0'
+    implementation 'io.grpc:grpc-netty-shaded:1.35.0' // shaded: includes ssl libraries
     implementation 'io.grpc:grpc-protobuf:1.35.0'
     implementation 'io.grpc:grpc-stub:1.35.0'
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessary for Java 9+

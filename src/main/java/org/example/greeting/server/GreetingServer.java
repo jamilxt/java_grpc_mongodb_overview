@@ -3,14 +3,26 @@ package org.example.greeting.server;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
+import java.io.File;
 import java.io.IOException;
 
 public class GreetingServer {
+
   public static void main(String[] args) throws IOException, InterruptedException {
     System.out.println("Hello gRPC");
 
-    Server server = ServerBuilder.forPort(50051)
+    // DEVELOPMENT - plaintext server
+//    Server server = ServerBuilder.forPort(50051)
+//        .addService(new GreetServiceImpl())
+//        .build();
+
+    // PRODUCTION - secured server
+    Server server = ServerBuilder.forPort(50052)
         .addService(new GreetServiceImpl())
+        .useTransportSecurity(
+            new File("ssl/server.crt"),
+            new File("ssl/server.pem")
+        )
         .build();
 
     server.start();
@@ -23,4 +35,5 @@ public class GreetingServer {
 
     server.awaitTermination();
   }
+
 }
