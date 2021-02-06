@@ -17,6 +17,7 @@ public class GreetingServer {
 //        .build();
 
     // PRODUCTION - secured server
+    // With server authentication SSL/TLS; custom CA root certificates; not on Android
     Server server = ServerBuilder.forPort(50052)
         .addService(new GreetServiceImpl())
         .useTransportSecurity(
