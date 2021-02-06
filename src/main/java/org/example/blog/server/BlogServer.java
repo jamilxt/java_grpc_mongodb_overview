@@ -4,10 +4,16 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BlogServer {
 
   public static void main(String[] args) throws IOException, InterruptedException {
+
+    Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+    mongoLogger.setLevel(Level.SEVERE);
+
     Server server = ServerBuilder.forPort(50051)
         .addService(new BlogServiceImpl())
         .build();

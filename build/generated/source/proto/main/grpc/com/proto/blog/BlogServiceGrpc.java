@@ -14,6 +14,37 @@ public final class BlogServiceGrpc {
   public static final String SERVICE_NAME = "blog.BlogService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<com.proto.blog.CreateBlogRequest,
+      com.proto.blog.CreateBlogResponse> getCreateBlogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "createBlog",
+      requestType = com.proto.blog.CreateBlogRequest.class,
+      responseType = com.proto.blog.CreateBlogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.blog.CreateBlogRequest,
+      com.proto.blog.CreateBlogResponse> getCreateBlogMethod() {
+    io.grpc.MethodDescriptor<com.proto.blog.CreateBlogRequest, com.proto.blog.CreateBlogResponse> getCreateBlogMethod;
+    if ((getCreateBlogMethod = BlogServiceGrpc.getCreateBlogMethod) == null) {
+      synchronized (BlogServiceGrpc.class) {
+        if ((getCreateBlogMethod = BlogServiceGrpc.getCreateBlogMethod) == null) {
+          BlogServiceGrpc.getCreateBlogMethod = getCreateBlogMethod =
+              io.grpc.MethodDescriptor.<com.proto.blog.CreateBlogRequest, com.proto.blog.CreateBlogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createBlog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.blog.CreateBlogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.blog.CreateBlogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("createBlog"))
+              .build();
+        }
+      }
+    }
+    return getCreateBlogMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -62,8 +93,22 @@ public final class BlogServiceGrpc {
    */
   public static abstract class BlogServiceImplBase implements io.grpc.BindableService {
 
+    /**
+     */
+    public void createBlog(com.proto.blog.CreateBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.blog.CreateBlogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateBlogMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getCreateBlogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.blog.CreateBlogRequest,
+                com.proto.blog.CreateBlogResponse>(
+                  this, METHODID_CREATE_BLOG)))
           .build();
     }
   }
@@ -81,6 +126,14 @@ public final class BlogServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BlogServiceStub(channel, callOptions);
     }
+
+    /**
+     */
+    public void createBlog(com.proto.blog.CreateBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.blog.CreateBlogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBlogMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -95,6 +148,13 @@ public final class BlogServiceGrpc {
     protected BlogServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BlogServiceBlockingStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public com.proto.blog.CreateBlogResponse createBlog(com.proto.blog.CreateBlogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBlogMethod(), getCallOptions(), request);
     }
   }
 
@@ -111,8 +171,17 @@ public final class BlogServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BlogServiceFutureStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.blog.CreateBlogResponse> createBlog(
+        com.proto.blog.CreateBlogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBlogMethod(), getCallOptions()), request);
+    }
   }
 
+  private static final int METHODID_CREATE_BLOG = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -131,6 +200,10 @@ public final class BlogServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CREATE_BLOG:
+          serviceImpl.createBlog((com.proto.blog.CreateBlogRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.blog.CreateBlogResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -192,6 +265,7 @@ public final class BlogServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new BlogServiceFileDescriptorSupplier())
+              .addMethod(getCreateBlogMethod())
               .build();
         }
       }
