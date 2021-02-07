@@ -18,7 +18,7 @@ public final class BlogServiceGrpc {
       com.proto.blog.CreateBlogResponse> getCreateBlogMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "createBlog",
+      fullMethodName = SERVICE_NAME + '/' + "CreateBlog",
       requestType = com.proto.blog.CreateBlogRequest.class,
       responseType = com.proto.blog.CreateBlogResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -31,13 +31,13 @@ public final class BlogServiceGrpc {
           BlogServiceGrpc.getCreateBlogMethod = getCreateBlogMethod =
               io.grpc.MethodDescriptor.<com.proto.blog.CreateBlogRequest, com.proto.blog.CreateBlogResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createBlog"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBlog"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.CreateBlogRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.CreateBlogResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("createBlog"))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("CreateBlog"))
               .build();
         }
       }
@@ -49,7 +49,7 @@ public final class BlogServiceGrpc {
       com.proto.blog.ReadBlogResponse> getReadBlogMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "readBlog",
+      fullMethodName = SERVICE_NAME + '/' + "ReadBlog",
       requestType = com.proto.blog.ReadBlogRequest.class,
       responseType = com.proto.blog.ReadBlogResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -62,13 +62,13 @@ public final class BlogServiceGrpc {
           BlogServiceGrpc.getReadBlogMethod = getReadBlogMethod =
               io.grpc.MethodDescriptor.<com.proto.blog.ReadBlogRequest, com.proto.blog.ReadBlogResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "readBlog"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReadBlog"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.ReadBlogRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.ReadBlogResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("readBlog"))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("ReadBlog"))
               .build();
         }
       }
@@ -80,7 +80,7 @@ public final class BlogServiceGrpc {
       com.proto.blog.UpdateBlogResponse> getUpdateBlogMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "updateBlog",
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBlog",
       requestType = com.proto.blog.UpdateBlogRequest.class,
       responseType = com.proto.blog.UpdateBlogResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -93,13 +93,13 @@ public final class BlogServiceGrpc {
           BlogServiceGrpc.getUpdateBlogMethod = getUpdateBlogMethod =
               io.grpc.MethodDescriptor.<com.proto.blog.UpdateBlogRequest, com.proto.blog.UpdateBlogResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateBlog"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBlog"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.UpdateBlogRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.UpdateBlogResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("updateBlog"))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("UpdateBlog"))
               .build();
         }
       }
@@ -111,7 +111,7 @@ public final class BlogServiceGrpc {
       com.proto.blog.DeleteBlogResponse> getDeleteBlogMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "deleteBlog",
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBlog",
       requestType = com.proto.blog.DeleteBlogRequest.class,
       responseType = com.proto.blog.DeleteBlogResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -124,13 +124,13 @@ public final class BlogServiceGrpc {
           BlogServiceGrpc.getDeleteBlogMethod = getDeleteBlogMethod =
               io.grpc.MethodDescriptor.<com.proto.blog.DeleteBlogRequest, com.proto.blog.DeleteBlogResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "deleteBlog"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBlog"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.DeleteBlogRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.blog.DeleteBlogResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("deleteBlog"))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("DeleteBlog"))
               .build();
         }
       }

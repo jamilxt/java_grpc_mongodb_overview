@@ -53,9 +53,9 @@ message ListBlogResponse {
 }
 
 service BlogService {
-    rpc createBlog(CreateBlogRequest) returns (CreateBlogResponse) {};
-    rpc readBlog(ReadBlogRequest) returns (ReadBlogResponse) {}; // return NOT_FOUND if not found
-    rpc updateBlog(UpdateBlogRequest) returns (UpdateBlogResponse) {}; // return NOT_FOUND if not found
-    rpc deleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse) {}; // return NOT_FOUND if not found
+    rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse) {};
+    rpc ReadBlog(ReadBlogRequest) returns (ReadBlogResponse) {}; // return NOT_FOUND if not found
+    rpc UpdateBlog(UpdateBlogRequest) returns (UpdateBlogResponse) {}; // return NOT_FOUND if not found
+    rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse) {}; // return NOT_FOUND if not found
     rpc ListBlog(ListBlogRequest) returns (stream ListBlogResponse) {};
 }
