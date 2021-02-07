@@ -11,7 +11,11 @@ import java.util.logging.Logger;
 public class BlogServer {
 
   public static void main(String[] args) throws IOException, InterruptedException {
-
+    // Evans CLI test with CRUD
+    // add reflection as service
+    // evans -p 50051 -r
+    // ^ execute this command using CMD
+    // download: https://github.com/ktr0731/evans
     Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
     mongoLogger.setLevel(Level.SEVERE);
 
