@@ -28,7 +28,16 @@ message ReadBlogResponse {
     Blog blog = 1;
 }
 
+message UpdateBlogRequest {
+    Blog blog = 1;
+}
+
+message UpdateBlogResponse {
+    Blog blog = 1;
+}
+
 service BlogService {
     rpc createBlog(CreateBlogRequest) returns (CreateBlogResponse) {};
     rpc readBlog(ReadBlogRequest) returns (ReadBlogResponse) {}; // return NOT_FOUND if not found
+    rpc updateBlog(UpdateBlogRequest) returns (UpdateBlogResponse) {};
 }
