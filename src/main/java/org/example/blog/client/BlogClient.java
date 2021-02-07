@@ -71,11 +71,18 @@ public class BlogClient {
         .build());
     System.out.println("Deleted blog");
 
-    System.out.println("Reading blog...");
-    // this one should return NOT_FOUND
-    ReadBlogResponse readBlogResponseAfterDeletion = blogClient.readBlog(ReadBlogRequest.newBuilder()
-        .setBlogId(blogId)
-        .build());
+//    System.out.println("Reading blog...");
+//    // this one should return NOT_FOUND
+//    ReadBlogResponse readBlogResponseAfterDeletion = blogClient.readBlog(ReadBlogRequest.newBuilder()
+//        .setBlogId(blogId)
+//        .build());
+
+    // we list the blogs in our database
+    System.out.println("Listing all blogs");
+    blogClient.listBlog(ListBlogRequest.newBuilder().build()).forEachRemaining(
+        listBlogResponse -> System.out.println(listBlogResponse.getBlog().toString())
+    );
+
   }
 
 }
