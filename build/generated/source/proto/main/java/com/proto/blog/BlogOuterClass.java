@@ -29,6 +29,16 @@ public final class BlogOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blog_CreateBlogResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_ReadBlogRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blog_ReadBlogRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blog_ReadBlogResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blog_ReadBlogResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -42,10 +52,14 @@ public final class BlogOuterClass {
       "\001(\t\022\021\n\tauthor_id\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\017\n" +
       "\007content\030\004 \001(\t\"-\n\021CreateBlogRequest\022\030\n\004b" +
       "log\030\001 \001(\0132\n.blog.Blog\".\n\022CreateBlogRespo" +
-      "nse\022\030\n\004blog\030\001 \001(\0132\n.blog.Blog2P\n\013BlogSer" +
-      "vice\022A\n\ncreateBlog\022\027.blog.CreateBlogRequ" +
-      "est\032\030.blog.CreateBlogResponse\"\000B\022\n\016com.p" +
-      "roto.blogP\001b\006proto3"
+      "nse\022\030\n\004blog\030\001 \001(\0132\n.blog.Blog\"\"\n\017ReadBlo" +
+      "gRequest\022\017\n\007blog_id\030\001 \001(\t\",\n\020ReadBlogRes" +
+      "ponse\022\030\n\004blog\030\001 \001(\0132\n.blog.Blog2\215\001\n\013Blog" +
+      "Service\022A\n\ncreateBlog\022\027.blog.CreateBlogR" +
+      "equest\032\030.blog.CreateBlogResponse\"\000\022;\n\010re" +
+      "adBlog\022\025.blog.ReadBlogRequest\032\026.blog.Rea" +
+      "dBlogResponse\"\000B\022\n\016com.proto.blogP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -68,6 +82,18 @@ public final class BlogOuterClass {
     internal_static_blog_CreateBlogResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blog_CreateBlogResponse_descriptor,
+        new java.lang.String[] { "Blog", });
+    internal_static_blog_ReadBlogRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_blog_ReadBlogRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blog_ReadBlogRequest_descriptor,
+        new java.lang.String[] { "BlogId", });
+    internal_static_blog_ReadBlogResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_blog_ReadBlogResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blog_ReadBlogResponse_descriptor,
         new java.lang.String[] { "Blog", });
   }
 
